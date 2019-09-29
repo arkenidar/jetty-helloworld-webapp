@@ -30,7 +30,7 @@ response.getOutputStream().println("(reload to test session)<br>");
   HttpSession session=request.getSession();
         session.setAttribute("counter",
 session.getAttribute("counter")==null?
-"0":new Integer(1+Integer.valueOf(session.getAttribute("counter").toString())).toString()
+"0":Integer.valueOf(1+Integer.valueOf(session.getAttribute("counter").toString())).toString()
 );
 
       response.getOutputStream().print(session.getAttribute("counter").toString());
